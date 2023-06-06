@@ -22,7 +22,7 @@ public class cshSword : MonoBehaviour
         {
             if (currentTime == 0f)
             {
-                // ¹üÀ§ ³»ÀÇ ¸ğµç Àû¿¡°Ô ÇÇÇØ¸¦ ÀÔÈû
+                // ë²”ìœ„ ë‚´ì˜ ëª¨ë“  ì ì—ê²Œ í”¼í•´ë¥¼ ì…í˜
                 Collider2D[] colls = Physics2D.OverlapBoxAll(transform.position, new Vector2(2.0f, 2.0f), 0);
                 for (int i = 0; i < colls.Length; i++)
                 {

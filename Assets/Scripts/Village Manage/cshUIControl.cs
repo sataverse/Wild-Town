@@ -96,17 +96,17 @@ public class cshUIControl : MonoBehaviour
     private bool autoSave = true;
     private bool isQuestClear = false;
 
-    // Ä³¸¯ÅÍ UI
+    // ìºë¦­í„° UI
     private Character currentCharacter;
 
-    // Ã¢°í UI
+    // ì°½ê³  UI
     private int sellIndex;
 
-    // »óÁ¡ UI
+    // ìƒì  UI
     private StructureInstance currentProduceStructure;
     private bool isShowStructureStatus = false;
 
-    // °Ç¼³ UI
+    // ê±´ì„¤ UI
     private GameObject selectedStructure = null;
     private StructureInstance selectedStructureInformation = null;
     private bool isNew = false;
@@ -115,7 +115,7 @@ public class cshUIControl : MonoBehaviour
     private int previousStructurePositionX = -1;
     private int previousStructurePositionY = -1;
 
-    // ÀüÅõ UI
+    // ì „íˆ¬ UI
     private int[] characterIsSelected = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     private int selectedCharacterLength = 0;
 
@@ -201,7 +201,7 @@ public class cshUIControl : MonoBehaviour
         changeUI(titleUI, normalUI);
     }
 
-    // Ã¢°í UI
+    // ì°½ê³  UI
     public void openStorage()
     {
         status = "ui";
@@ -217,7 +217,7 @@ public class cshUIControl : MonoBehaviour
 
     public void openSellWindow(int n)
     {
-        // Ã¢°í Ç×¸ñ ÅÍÄ¡½Ã ÆÇ¸Å °¡´É
+        // ì°½ê³  í•­ëª© í„°ì¹˜ì‹œ íŒë§¤ ê°€ëŠ¥
         Slider sliderComponent = productSellQuantitySlider.GetComponent<Slider>();
         sellIndex = n;
 
@@ -237,7 +237,7 @@ public class cshUIControl : MonoBehaviour
 
     public void productSellSliderValueChanged()
     {
-        // ÆÇ¸Å ¼ö·® ½½¶óÀÌ´õ º¯°æÇÒ °æ¿ì
+        // íŒë§¤ ìˆ˜ëŸ‰ ìŠ¬ë¼ì´ë” ë³€ê²½í•  ê²½ìš°
         productSellQuantityText.GetComponent<TextMeshProUGUI>().text = "X " + productSellQuantitySlider.GetComponent<Slider>().value;
         acornQuantityText.GetComponent<TextMeshProUGUI>().text = "X " + productsInformation.productArray[sellIndex].price * productSellQuantitySlider.GetComponent<Slider>().value;
         if (productSellQuantitySlider.GetComponent<Slider>().value == 0)
@@ -274,7 +274,7 @@ public class cshUIControl : MonoBehaviour
         closeSellWindow();
     }
 
-    // ÁÖ¹Î UI
+    // ì£¼ë¯¼ UI
     public void openResident()
     {
         status = "ui";
@@ -290,14 +290,14 @@ public class cshUIControl : MonoBehaviour
 
     public void openCharacterWindow(int n)
     {
-        // ÁÖ¹Î Ç×¸ñ ÅÍÄ¡ÇÏ¸é ÁÖ¹Î ¼¼ºÎ »çÇ× È®ÀÎ
+        // ì£¼ë¯¼ í•­ëª© í„°ì¹˜í•˜ë©´ ì£¼ë¯¼ ì„¸ë¶€ ì‚¬í•­ í™•ì¸
         currentCharacter = characterInformation.characterArray[n];
         characterWindow.SetActive(true);
         isTooltipOn = false;
         characterNameText.GetComponent<TextMeshProUGUI>().text = currentCharacter.name;
         characterSkillNameText.GetComponent<TextMeshProUGUI>().text = currentCharacter.skillName;
         characterSkillDirectionsText.GetComponent<TextMeshProUGUI>().text = currentCharacter.skillDirections;
-        characterSkillCoolTimeText.GetComponent<TextMeshProUGUI>().text = currentCharacter.skillCoolTime.ToString() + "ÃÊ";
+        characterSkillCoolTimeText.GetComponent<TextMeshProUGUI>().text = currentCharacter.skillCoolTime.ToString() + "ì´ˆ";
         characterImageObject.GetComponent<Image>().sprite = currentCharacter.image;
         characterSkillImageObject.GetComponent<Image>().sprite = currentCharacter.skillImage;
         refreshCharacterWindow();
@@ -311,7 +311,7 @@ public class cshUIControl : MonoBehaviour
 
     public void showTooltip()
     {
-        // ½ºÅ³ ¼³¸íÀ» º¸¿©ÁÖ´Â ÅøÆÁ
+        // ìŠ¤í‚¬ ì„¤ëª…ì„ ë³´ì—¬ì£¼ëŠ” íˆ´íŒ
         characterSkillTooltip.SetActive(!isTooltipOn);
         isTooltipOn = !isTooltipOn;
     }
@@ -333,7 +333,7 @@ public class cshUIControl : MonoBehaviour
 
     private void setStatusByLevel()
     {
-        // ·¹º§¿¡ µû¶ó ½ºÅÈ, ·¹º§¾÷ ºñ¿ë µîÀ» ´Ù¸£°Ô ³ªÅ¸³¿
+        // ë ˆë²¨ì— ë”°ë¼ ìŠ¤íƒ¯, ë ˆë²¨ì—… ë¹„ìš© ë“±ì„ ë‹¤ë¥´ê²Œ ë‚˜íƒ€ëƒ„
         int level = currentCharacter.level;
         int OP = currentCharacter.offensePower;
         int DP = currentCharacter.defensePower;
@@ -434,7 +434,7 @@ public class cshUIControl : MonoBehaviour
                 }
                 else
                 {
-                    // µµÅä¸® ¶Ç´Â Àç·á°¡ ºÎÁ·ÇÒ °æ¿ì
+                    // ë„í† ë¦¬ ë˜ëŠ” ì¬ë£Œê°€ ë¶€ì¡±í•  ê²½ìš°
                     levelUpButton.GetComponent<Button>().interactable = false;
                     if(cshBasicInformation.acornNum < acorn)
                     {
@@ -466,7 +466,7 @@ public class cshUIControl : MonoBehaviour
         characterWindow.SetActive(false);
     }
 
-    // °Ç¼³ UI
+    // ê±´ì„¤ UI
     private void initStructureToBuild()
     {
         for (int i = 0; i < buildStructureListObject.transform.childCount; i++)
@@ -508,8 +508,8 @@ public class cshUIControl : MonoBehaviour
 
     public void showStructureToBuild(int n)
     {
-        // °Ç¼³ °¡´ÉÇÑ ±¸Á¶¹°µéÀ» º¸¿©ÁÜ
-        // n : 0ÀÏ °æ¿ì ½Ã¼³, 1ÀÏ °æ¿ì ½Ä¹°, 2ÀÏ °æ¿ì »óÁ¡ ¸®½ºÆ®¸¦ º¸¿©ÁÜ
+        // ê±´ì„¤ ê°€ëŠ¥í•œ êµ¬ì¡°ë¬¼ë“¤ì„ ë³´ì—¬ì¤Œ
+        // n : 0ì¼ ê²½ìš° ì‹œì„¤, 1ì¼ ê²½ìš° ì‹ë¬¼, 2ì¼ ê²½ìš° ìƒì  ë¦¬ìŠ¤íŠ¸ë¥¼ ë³´ì—¬ì¤Œ
         Structure[] structureArray;
         initStructureToBuild();
 
@@ -559,7 +559,7 @@ public class cshUIControl : MonoBehaviour
 
     public void startBuildStructure(int n)
     {
-        // »õ·Î ±¸Á¶¹°À» °Ç¼³ÇÒ °æ¿ì ±¸Á¶¹° PrefabÀ» »ı¼º
+        // ìƒˆë¡œ êµ¬ì¡°ë¬¼ì„ ê±´ì„¤í•  ê²½ìš° êµ¬ì¡°ë¬¼ Prefabì„ ìƒì„±
         int[] pos = getCurrentCameraPosition();
         int posX = pos[0], posY = pos[1];
         isNew = true;
@@ -587,10 +587,10 @@ public class cshUIControl : MonoBehaviour
 
     public void selectStructureToModify(Transform parent)
     {
-        // °Ç¼³µÈ ±¸Á¶¹°À» ¼±ÅÃÇÒ °æ¿ì ±¸Á¶¹°ÀÌ Åõ¸íÇØÁö°í ÀÌµ¿ ¹× Ã¶°Å ¹öÆ°ÀÌ º¸¿©Áü
+        // ê±´ì„¤ëœ êµ¬ì¡°ë¬¼ì„ ì„ íƒí•  ê²½ìš° êµ¬ì¡°ë¬¼ì´ íˆ¬ëª…í•´ì§€ê³  ì´ë™ ë° ì² ê±° ë²„íŠ¼ì´ ë³´ì—¬ì§
         if (selectedStructure != null)
         {
-            // ¿ø·¡ ¼±ÅÃÇÑ ±¸Á¶¹° ºÒÅõ¸í
+            // ì›ë˜ ì„ íƒí•œ êµ¬ì¡°ë¬¼ ë¶ˆíˆ¬ëª…
             selectedStructure.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         }
         selectedStructure = parent.GetChild(1).transform.GetChild(0).gameObject;
@@ -600,7 +600,7 @@ public class cshUIControl : MonoBehaviour
 
     public void deselectStructureToModify()
     {
-        // ¼±ÅÃµÈ ±¸Á¶¹°À» ¼±ÅÃ Ãë¼ÒÇÒ °æ¿ì ±¸Á¶¹°ÀÌ ºÒÅõ¸íÇØÁü
+        // ì„ íƒëœ êµ¬ì¡°ë¬¼ì„ ì„ íƒ ì·¨ì†Œí•  ê²½ìš° êµ¬ì¡°ë¬¼ì´ ë¶ˆíˆ¬ëª…í•´ì§
         if (selectedStructure != null)
         {
             selectedStructure.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
@@ -629,7 +629,7 @@ public class cshUIControl : MonoBehaviour
 
     public void checkStructurePosition()
     {
-        // Ä«¸Ş¶óÀÇ À§Ä¡°¡ º¯°æµÇ¾ú´ÂÁö È®ÀÎÇÏ°í 
+        // ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ê°€ ë³€ê²½ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ê³  
         int posX = -1, posY = -1;
         Vector2 pos = Camera.main.transform.position;
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
@@ -644,7 +644,7 @@ public class cshUIControl : MonoBehaviour
             }
         }
 
-        // º¯°æµÇ¾ú´Ù¸é ±¸Á¶¹°À» ÀÌµ¿
+        // ë³€ê²½ë˜ì—ˆë‹¤ë©´ êµ¬ì¡°ë¬¼ì„ ì´ë™
         if (posX != previousStructurePositionX || posY != previousStructurePositionY)
         {
             structureInformation.moveStructure(selectedStructure, posX, posY, true);
@@ -652,7 +652,7 @@ public class cshUIControl : MonoBehaviour
             previousStructurePositionY = posY;
         }
 
-        // ÀÌ¹Ì ¹Ù¶óº¸´Â À§Ä¡¿¡ ±¸Á¶¹°ÀÌ ÀÖ´Ù¸é °Ç¼³ÇÒ ¼ö ¾øÀ½
+        // ì´ë¯¸ ë°”ë¼ë³´ëŠ” ìœ„ì¹˜ì— êµ¬ì¡°ë¬¼ì´ ìˆë‹¤ë©´ ê±´ì„¤í•  ìˆ˜ ì—†ìŒ
         if(hit.transform.parent.transform.GetChild(1).childCount > 1)
         {
             selectedStructure.GetComponent<SpriteRenderer>().color = new Color32(255, 0, 0, 150);
@@ -669,12 +669,12 @@ public class cshUIControl : MonoBehaviour
     {
         if (isNew)
         {
-            // »õ·Î¿î ±¸Á¶¹° °Ç¼³À» Ãë¼Ò
+            // ìƒˆë¡œìš´ êµ¬ì¡°ë¬¼ ê±´ì„¤ì„ ì·¨ì†Œ
             Destroy(selectedStructure);
         }
         else
         {
-            // °Ç¼³µÈ ±¸Á¶¹° ÀÌµ¿ Ãë¼Ò
+            // ê±´ì„¤ëœ êµ¬ì¡°ë¬¼ ì´ë™ ì·¨ì†Œ
             structureInformation.moveStructure(selectedStructure, startStructurePositionX, startStructurePositionY, false);
         }
         deselectStructureToModify();
@@ -685,7 +685,7 @@ public class cshUIControl : MonoBehaviour
 
     public void confirmStructurePosition()
     {
-        // »õ·Î¿î ±¸Á¶¹° °Ç¼³ È®Á¤, °Ç¼³µÈ ±¸Á¶¹° ÀÌµ¿ È®Á¤
+        // ìƒˆë¡œìš´ êµ¬ì¡°ë¬¼ ê±´ì„¤ í™•ì •, ê±´ì„¤ëœ êµ¬ì¡°ë¬¼ ì´ë™ í™•ì •
         structureInformation.confirmStructurePosition(selectedStructure, startStructurePositionX, startStructurePositionY, previousStructurePositionX, previousStructurePositionY, selectedStructureInformation);
         deselectStructureToModify();
         changeUI(buildMoveUI, buildUI);
@@ -696,7 +696,7 @@ public class cshUIControl : MonoBehaviour
 
     public void openRemoveStructureAlertDialog()
     {
-        // ¼±ÅÃµÈ ±¸Á¶¹°¿¡ ´ëÇÑ Ã¶°Å ¹öÆ°À» ´©¸¦ °æ¿ì
+        // ì„ íƒëœ êµ¬ì¡°ë¬¼ì— ëŒ€í•œ ì² ê±° ë²„íŠ¼ì„ ëˆ„ë¥¼ ê²½ìš°
         status = "ui";
         buildUI.SetActive(false);
         structureRemoveAlertDialog.SetActive(true);
@@ -719,7 +719,7 @@ public class cshUIControl : MonoBehaviour
         closeRemoveStructureAlertDialog();
     }
 
-    // ±¸Á¶¹° UI
+    // êµ¬ì¡°ë¬¼ UI
     public void openStructure(int x, int y)
     {
         changeUI(normalUI, structureUI);
@@ -732,15 +732,15 @@ public class cshUIControl : MonoBehaviour
 
     private void showStructureProduce()
     {
-        // ³²Àº »ı»ê ½Ã°£ º¸¿©ÁÖ±â
+        // ë‚¨ì€ ìƒì‚° ì‹œê°„ ë³´ì—¬ì£¼ê¸°
         if (currentProduceStructure.structure.GetType().Name == "Store")
         {
             Transform sliders = produceSliders.transform.GetChild(0);
             sliders.gameObject.SetActive(true);
             sliders.GetChild(0).GetComponent<Slider>().value = currentProduceStructure.currentAcornTime / 20f;
-            sliders.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (20 - (int)(currentProduceStructure.currentAcornTime)).ToString() + "ÃÊ";
+            sliders.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (20 - (int)(currentProduceStructure.currentAcornTime)).ToString() + "ì´ˆ";
             sliders.GetChild(1).GetComponent<Slider>().value = currentProduceStructure.currentProductTime / currentProduceStructure.structure.productTime;
-            sliders.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ((int)(currentProduceStructure.structure.productTime) - (int)(currentProduceStructure.currentProductTime)).ToString() + "ÃÊ";
+            sliders.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ((int)(currentProduceStructure.structure.productTime) - (int)(currentProduceStructure.currentProductTime)).ToString() + "ì´ˆ";
             sliders.GetChild(3).GetComponent<TextMeshProUGUI>().text = "X " + currentProduceStructure.structure.acorn;
             sliders.GetChild(4).GetComponent<Image>().sprite = productsInformation.productArray[currentProduceStructure.structure.product].image;
         }
@@ -749,7 +749,7 @@ public class cshUIControl : MonoBehaviour
             Transform sliders = produceSliders.transform.GetChild(1);
             sliders.gameObject.SetActive(true);
             sliders.GetChild(0).GetComponent<Slider>().value = currentProduceStructure.currentProductTime / currentProduceStructure.structure.productTime;
-            sliders.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ((int)(currentProduceStructure.structure.productTime) - (int)(currentProduceStructure.currentProductTime)).ToString() + "ÃÊ";
+            sliders.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = ((int)(currentProduceStructure.structure.productTime) - (int)(currentProduceStructure.currentProductTime)).ToString() + "ì´ˆ";
             sliders.GetChild(1).GetComponent<Image>().sprite = productsInformation.productArray[currentProduceStructure.structure.product].image;
         }
     }
@@ -763,7 +763,7 @@ public class cshUIControl : MonoBehaviour
         changeUI(structureUI, normalUI);
     }
 
-    // Äù½ºÆ® UI
+    // í€˜ìŠ¤íŠ¸ UI
     public void openQuest()
     {
         status = "ui";
@@ -774,7 +774,7 @@ public class cshUIControl : MonoBehaviour
 
     public void closeQuest()
     {
-        // Äù½ºÆ® 4 Å¬¸®¾îÇÏ¸é »õ·Î¿î ±¸Á¶¹° Àá±İ ÇØÁ¦
+        // í€˜ìŠ¤íŠ¸ 4 í´ë¦¬ì–´í•˜ë©´ ìƒˆë¡œìš´ êµ¬ì¡°ë¬¼ ì ê¸ˆ í•´ì œ
         if(cshBasicInformation.currentQuest == 4 && isQuestClear)
         {
             questUI.SetActive(false);
@@ -814,7 +814,7 @@ public class cshUIControl : MonoBehaviour
         }
     }
 
-    // ±¸Á¶¹° ¹× Ä³¸¯ÅÍ ÇØ±İ °ü¸®
+    // êµ¬ì¡°ë¬¼ ë° ìºë¦­í„° í•´ê¸ˆ ê´€ë¦¬
     public void openUnlockStructureDialog()
     {
         int chapter = 0;
@@ -887,15 +887,15 @@ public class cshUIControl : MonoBehaviour
         unlockCharacterDialog.SetActive(false);
     }
 
-    // Å½Çè UI
+    // íƒí—˜ UI
     public void openAdventure()
     {
         if(cshBasicInformation.currentChapter == 0)
         {
-            floatNotice("Àá°ÜÀÖ¾î¿ä!\n(ÁÖ¹Î 5¸í º¸À¯)");
+            floatNotice("ì ê²¨ìˆì–´ìš”!\n(ì£¼ë¯¼ 5ëª… ë³´ìœ )");
             return;
         }
-        // Å½Çè °¡´ÉÇÑ Áö¿ªÀ» º¸¿©ÁÜ
+        // íƒí—˜ ê°€ëŠ¥í•œ ì§€ì—­ì„ ë³´ì—¬ì¤Œ
         Camera.main.transform.position = new Vector3(0f, 1.5f, -10f);
         Camera.main.GetComponent<Camera>().orthographicSize = 9;
         status = "ui";
@@ -931,17 +931,17 @@ public class cshUIControl : MonoBehaviour
     {
         if (isNotReady)
         {
-            floatNotice("ÁØºñÁßÀÔ´Ï´Ù.");
+            floatNotice("ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
         }
         else
         {
-            floatNotice("ÀÔÀå Á¶°Ç\n(Ã©ÅÍ2 Å¬¸®¾î)");
+            floatNotice("ì…ì¥ ì¡°ê±´\n(ì±•í„°2 í´ë¦¬ì–´)");
         }
     }
 
     private void floatNotice(string notice)
     {
-        // ÇöÀç ¼±ÅÃµÈ ¹öÆ°¿¡ ´ëÇÑ ¾Ë¸²À» ¶ç¿ò
+        // í˜„ì¬ ì„ íƒëœ ë²„íŠ¼ì— ëŒ€í•œ ì•Œë¦¼ì„ ë„ì›€
         Transform currentEventUI = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform;
         GameObject noticeTextObject = Instantiate(noticeText);
         noticeTextObject.transform.SetParent(currentEventUI);
@@ -949,12 +949,12 @@ public class cshUIControl : MonoBehaviour
         noticeTextObject.GetComponent<cshNotice>().startSetting(notice);
     }
 
-    // Ä³¸¯ÅÍ ¼±ÅÃ UI
+    // ìºë¦­í„° ì„ íƒ UI
     public void openCharacterSelect()
     {
         int n = cshBasicInformation.currentChapter;
 
-        // Ã©ÅÍ¿¡ µû¶ó ´Ù¸¥ ¸ó½ºÅÍ ¸®½ºÆ®¸¦ º¸¿©ÁÜ
+        // ì±•í„°ì— ë”°ë¼ ë‹¤ë¥¸ ëª¬ìŠ¤í„° ë¦¬ìŠ¤íŠ¸ë¥¼ ë³´ì—¬ì¤Œ
         for (int i = 0; i < 3; i++)
         {
             areaNameObject.GetChild(i).gameObject.SetActive(false);
@@ -968,7 +968,7 @@ public class cshUIControl : MonoBehaviour
         {
             if(characterInformation.characterArray[i].level == -1)
             {
-                // Ä³¸¯ÅÍ¸¦ ÇØ±İÇÏÁö ¸øÇÔ
+                // ìºë¦­í„°ë¥¼ í•´ê¸ˆí•˜ì§€ ëª»í•¨
                 characterIsSelected[i] = -1;
             }
             else
@@ -1005,7 +1005,7 @@ public class cshUIControl : MonoBehaviour
 
     public void updateCharacterSelect()
     {
-        // ¼±ÅÃµÈ Ä³¸¯ÅÍ¿Í ¼±ÅÃµÇÁö ¾ÊÀº Ä³¸¯ÅÍ¸¦ ±¸ºĞÇÏ¿© ¹èÄ¡
+        // ì„ íƒëœ ìºë¦­í„°ì™€ ì„ íƒë˜ì§€ ì•Šì€ ìºë¦­í„°ë¥¼ êµ¬ë¶„í•˜ì—¬ ë°°ì¹˜
         int idx = 0;
         for(int i = 0; i < 5; i++)
         {
@@ -1021,14 +1021,14 @@ public class cshUIControl : MonoBehaviour
 
         for(int i = 0; i < 10; i++)
         {
-            // ¾ÆÁ÷ ÇØ±İµÇÁö ¾ÊÀº Ä³¸¯ÅÍ´Â ¼±ÅÃÇÒ ¼ö ¾øÀ½
+            // ì•„ì§ í•´ê¸ˆë˜ì§€ ì•Šì€ ìºë¦­í„°ëŠ” ì„ íƒí•  ìˆ˜ ì—†ìŒ
             if(characterIsSelected[i] != -1)
             {
                 int temp = i;
                 GameObject button = Instantiate(characterInformation.characterArray[i].button);
                 if (characterIsSelected[i] == 1)
                 {
-                    // ¼±ÅÃµÈ Ä³¸¯ÅÍ´Â ¼±ÅÃ ÆĞ³Î¿¡ Ãß°¡ÇÏ°í Å¬¸¯ÇÏ¸é ¼±ÅÃ ÇØÁ¦
+                    // ì„ íƒëœ ìºë¦­í„°ëŠ” ì„ íƒ íŒ¨ë„ì— ì¶”ê°€í•˜ê³  í´ë¦­í•˜ë©´ ì„ íƒ í•´ì œ
                     Transform par = selectedCharacterListObject.GetChild(idx++);
                     button.transform.position = par.position;
                     button.GetComponent<Button>().onClick.AddListener(() => excludeCharacterInTeam(temp));
@@ -1036,7 +1036,7 @@ public class cshUIControl : MonoBehaviour
                 }
                 else
                 {
-                    // ¼±ÅÃµÇÁö ¾ÊÀº Ä³¸¯ÅÍ´Â ºñ¼±ÅÃ ÆĞ³Î¿¡ Ãß°¡ÇÏ°í Å¬¸¯ÇÏ¸é ¼±ÅÃµÊ
+                    // ì„ íƒë˜ì§€ ì•Šì€ ìºë¦­í„°ëŠ” ë¹„ì„ íƒ íŒ¨ë„ì— ì¶”ê°€í•˜ê³  í´ë¦­í•˜ë©´ ì„ íƒë¨
                     button.GetComponent<Button>().onClick.AddListener(() => includeCharacterInTeam(temp));
                     button.transform.SetParent(deselectedCharacterListObject);
                 }
@@ -1046,7 +1046,7 @@ public class cshUIControl : MonoBehaviour
 
     public void duelStart()
     {
-        // µğÆæ½º °ÔÀÓ ½ÃÀÛ
+        // ë””íœìŠ¤ ê²Œì„ ì‹œì‘
         basicInformation.saveData();
 
         if(selectedCharacterLength == 5)
@@ -1070,7 +1070,7 @@ public class cshUIControl : MonoBehaviour
         SceneManager.LoadScene("Duel Scene");
     } 
 
-    // µğÆæ½º °ÔÀÓ Á¾·ù ÈÄ UI
+    // ë””íœìŠ¤ ê²Œì„ ì¢…ë¥˜ í›„ UI
     private void victoryDuel()
     {
         int acornPoint = 0;
@@ -1091,7 +1091,7 @@ public class cshUIControl : MonoBehaviour
 
     public void closeVictoryDialog()
     {
-        // ½Â¸®ÇßÀ» °æ¿ì º¸»óÀ» ¹Ş°í ±¸¸§À» Á¦°ÅÇØ °Ç¼³ °¡´ÉÇÑ °ø°£ÀÌ ´Ã¾î³²
+        // ìŠ¹ë¦¬í–ˆì„ ê²½ìš° ë³´ìƒì„ ë°›ê³  êµ¬ë¦„ì„ ì œê±°í•´ ê±´ì„¤ ê°€ëŠ¥í•œ ê³µê°„ì´ ëŠ˜ì–´ë‚¨
         int acornPoint = 0;
         if (cshBasicInformation.currentChapter == 1)
         {
@@ -1129,7 +1129,7 @@ public class cshUIControl : MonoBehaviour
         structureInformation.removeCloud(n);
     }
 
-    // ¼³Á¤ UI
+    // ì„¤ì • UI
     public void openSetting()
     {
         status = "ui";
@@ -1140,7 +1140,7 @@ public class cshUIControl : MonoBehaviour
 
     public void setAutoSave(bool autoSave)
     {
-        // ÀÚµ¿ ÀúÀå ¿©ºÎ Åä±Û ¹öÆ°
+        // ìë™ ì €ì¥ ì—¬ë¶€ í† ê¸€ ë²„íŠ¼
         this.autoSave = autoSave;
         autoSaveToggleButton.GetChild(0).gameObject.SetActive(autoSave);
         autoSaveToggleButton.GetChild(1).gameObject.SetActive(!autoSave);
@@ -1158,7 +1158,7 @@ public class cshUIControl : MonoBehaviour
         changeUI(settingUI, normalUI);
     }
 
-    // ÀúÀå UI
+    // ì €ì¥ UI
     public void saveData()
     {
         basicInformation.saveData();
@@ -1174,10 +1174,10 @@ public class cshUIControl : MonoBehaviour
         normalUI.SetActive(true);
     }
 
-    // ÃÊ±â ¼³Á¤ÇÏ±â
+    // ì´ˆê¸° ì„¤ì •í•˜ê¸°
     public void startSetting()
     {
-        // °ÔÀÓÀ» Áö±İ ½ÃÀÛÇß´ÂÁö Å½Çè(µğÆæ½º °ÔÀÓ)À» ¸¶Ä£ »óÅÂÀÎÁö ±¸ºĞÇÏ¿© ´Ù¸£°Ô µ¿ÀÛ
+        // ê²Œì„ì„ ì§€ê¸ˆ ì‹œì‘í–ˆëŠ”ì§€ íƒí—˜(ë””íœìŠ¤ ê²Œì„)ì„ ë§ˆì¹œ ìƒíƒœì¸ì§€ êµ¬ë¶„í•˜ì—¬ ë‹¤ë¥´ê²Œ ë™ì‘
         if (cshBasicInformation.startUI == 0)
         {
             titleUI.transform.GetChild(2).gameObject.SetActive(true);
@@ -1214,7 +1214,7 @@ public class cshUIControl : MonoBehaviour
         status = "build";
     }
 
-    // ÇöÀç Ä«¸Ş¶ó°¡ ¹Ù¶óº¸´Â ¶¥ÀÇ ÁÂÇ¥ ¸®ÅÏ
+    // í˜„ì¬ ì¹´ë©”ë¼ê°€ ë°”ë¼ë³´ëŠ” ë•…ì˜ ì¢Œí‘œ ë¦¬í„´
     private int[] getCurrentCameraPosition()
     {
         int posX = -1, posY = -1;

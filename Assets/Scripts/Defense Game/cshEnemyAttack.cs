@@ -68,7 +68,7 @@ public class cshEnemyAttack : MonoBehaviour
             }
         }
 
-        // ±âÀı »óÅÂ(»óÅÂÀÌ»ó 3¹ø)°¡ ¾Æ´Ï¸é °ø°İ ¶Ç´Â ÀÌµ¿
+        // ê¸°ì ˆ ìƒíƒœ(ìƒíƒœì´ìƒ 3ë²ˆ)ê°€ ì•„ë‹ˆë©´ ê³µê²© ë˜ëŠ” ì´ë™
         if(currentharmfulEffectTime[2] > harmfulduration[2] || currentharmfulEffectTime[2] == 0f)
         {
             if (isAttack)
@@ -99,7 +99,7 @@ public class cshEnemyAttack : MonoBehaviour
             if(currentharmfulEffectTime[i] > 0f)
             {
                 currentharmfulEffectTime[i] += Time.deltaTime;
-                // »óÅÂÀÌ»ó ½Ã°£ÀÌ Áö³ª¸é ÀÏÁ¤ ½Ã°£ µ¿¾È Æ¯Á¤ »óÅÂÀÌ»ó¿¡ ¸é¿ª »óÅÂ°¡ µÊ
+                // ìƒíƒœì´ìƒ ì‹œê°„ì´ ì§€ë‚˜ë©´ ì¼ì • ì‹œê°„ ë™ì•ˆ íŠ¹ì • ìƒíƒœì´ìƒì— ë©´ì—­ ìƒíƒœê°€ ë¨
                 if(currentharmfulEffectTime[i] > harmfulduration[i])
                 {
                     cureHarmfulEffect(i);
@@ -145,7 +145,7 @@ public class cshEnemyAttack : MonoBehaviour
 
     public void getHarmfulEffect(int n)
     {
-        // »óÅÂ ÀÌ»ó ½ÃÀÛ
+        // ìƒíƒœ ì´ìƒ ì‹œì‘
         if(n == 0 && currentharmfulImmunityTime[n] == 0f) 
         {
             currentOffensePower = 1;

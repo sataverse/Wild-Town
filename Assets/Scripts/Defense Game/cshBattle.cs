@@ -53,7 +53,7 @@ public class cshBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ¿¡³ÊÁö »ı»ê
+        // ì—ë„ˆì§€ ìƒì‚°
         currentEnergyProductionTime += Time.deltaTime;
         if(currentEnergyProductionTime >= energyProductionCoolTime)
         {
@@ -114,7 +114,7 @@ public class cshBattle : MonoBehaviour
         }
         
         // n
-        // 0 : ¿¡³ÊÁö »ı»ê·®  1 : ¼ÒÈ¯ °¡´ÉÇÑ ¾Æ±º ¼ö  2 : °ø°İ·Â
+        // 0 : ì—ë„ˆì§€ ìƒì‚°ëŸ‰  1 : ì†Œí™˜ ê°€ëŠ¥í•œ ì•„êµ° ìˆ˜  2 : ê³µê²©ë ¥
         if(n == 0)
         {
             energyProductionAmount = energyLevels[levels[n]];
@@ -125,14 +125,14 @@ public class cshBattle : MonoBehaviour
         }
         else
         {
-            // °ø°İ·ÂÀ» ¾÷±×·¹ÀÌµå Çß´Ù¸é ÀÌ¹Ì ¼ÒÈ¯µÈ ¾Æ±ºµé¿¡°Ôµµ Àû¿ë
+            // ê³µê²©ë ¥ì„ ì—…ê·¸ë ˆì´ë“œ í–ˆë‹¤ë©´ ì´ë¯¸ ì†Œí™˜ëœ ì•„êµ°ë“¤ì—ê²Œë„ ì ìš©
             for(int i = 0; i < characterList.transform.childCount; i++)
             {
                 characterList.transform.GetChild(i).GetComponent<cshCharacterAttack>().currentOffensePower = characterList.transform.GetChild(i).GetComponent<cshCharacterAttack>().originalOffensePower + offenseLevels[levels[n]];
             }
         }
 
-        // ¾÷±×·¹ÀÌµå ÇÑ Á¤µµ¿¡ µû¶ó º¯ÇÏ´Â ±âÁöÀÇ ¸ğ½À
+        // ì—…ê·¸ë ˆì´ë“œ í•œ ì •ë„ì— ë”°ë¼ ë³€í•˜ëŠ” ê¸°ì§€ì˜ ëª¨ìŠµ
         if (levels[0] + levels[1] + levels[2] == 5)
         {
             battleArea.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(false);

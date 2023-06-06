@@ -18,7 +18,7 @@ public class cshShield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ¹æ¾î¸·Àº ¿ø°Å¸® °ø°ÝÀ» 2È¸ ¹æ¾îÇÏ°Å³ª ½Ã°£ÀÌ Áö³ª¸é »ç¶óÁü
+        // ë°©ì–´ë§‰ì€ ì›ê±°ë¦¬ ê³µê²©ì„ 2íšŒ ë°©ì–´í•˜ê±°ë‚˜ ì‹œê°„ì´ ì§€ë‚˜ë©´ ì‚¬ë¼ì§
         if (count >= maxCount)
         {
             Destroy(transform.gameObject);

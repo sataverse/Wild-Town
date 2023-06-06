@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cshGroundPosition : MonoBehaviour
 {
-    // ¶¥ÀÇ À§Ä¡¸¦ ÀúÀåÇÏ¿© Á÷°üÀûÀÎ Á¢±Ù °¡´É - ¿ùµå ÁÂÇ¥¿¡¼­ °è»êÇÒ ÇÊ¿äx
+    // ë•…ì˜ ìœ„ì¹˜ë¥¼ ì €ì¥í•˜ì—¬ ì§ê´€ì ì¸ ì ‘ê·¼ ê°€ëŠ¥ - ì›”ë“œ ì¢Œí‘œì—ì„œ ê³„ì‚°í•  í•„ìš”x
     public int posX;
     public int posY;
 }

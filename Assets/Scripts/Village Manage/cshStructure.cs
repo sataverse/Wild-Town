@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// °Ç¼³µÈ ±¸Á¶¹° Á¤º¸¸¦ ÀúÀå
+// ê±´ì„¤ëœ êµ¬ì¡°ë¬¼ ì •ë³´ë¥¼ ì €ì¥
 public class StructureInstance
 {
     public float currentAcornTime = 0f;
@@ -15,7 +15,7 @@ public class StructureInstance
     }
 }
 
-// ±¸Á¶¹° Á¤º¸¸¦ ÀúÀå
+// êµ¬ì¡°ë¬¼ ì •ë³´ë¥¼ ì €ì¥
 public class Structure
 {
     public int code;
@@ -114,30 +114,30 @@ public class cshStructure : MonoBehaviour
 
     private void setStructureInfo()
     {
-        facilityArray[0] = new Facility(0, "ÁÖ¹Î¾ÆÆÄÆ®", 0, facilityPrefabArray[0]);
-        facilityArray[1] = new Facility(1, "Ã¢°í", 0, facilityPrefabArray[1]);
+        facilityArray[0] = new Facility(0, "ì£¼ë¯¼ì•„íŒŒíŠ¸", 0, facilityPrefabArray[0]);
+        facilityArray[1] = new Facility(1, "ì°½ê³ ", 0, facilityPrefabArray[1]);
 
-        plantArray[0] = new Plant(2, "¿À·»Áö ³ª¹«", 50, plantPrefabArray[0], 0, 20f);
-        plantArray[1] = new Plant(3, "ºí·çº£¸® ³ª¹«", 70, plantPrefabArray[1], 1, 30f);
-        plantArray[2] = new Plant(4, "¾ßÀÚ¼ö", 100, plantPrefabArray[2], 2, 45f);
-        plantArray[3] = new Plant(5, "º¢³ª¹«", 150, plantPrefabArray[3], 3, 60f);
-        plantArray[4] = new Plant(6, "´ë³ª¹«", 200, plantPrefabArray[4], 4, 90f);
-        plantArray[5] = new Plant(7, "Æ«¸³¹ç", 70, plantPrefabArray[5], 5, 30f);
-        plantArray[6] = new Plant(8, "´ç±Ù¹ç", 100, plantPrefabArray[6], 6, 45f);
-        plantArray[7] = new Plant(9, "¼ö¹Ú¹ç", 200, plantPrefabArray[7], 7, 90f);
+        plantArray[0] = new Plant(2, "ì˜¤ë Œì§€ ë‚˜ë¬´", 50, plantPrefabArray[0], 0, 20f);
+        plantArray[1] = new Plant(3, "ë¸”ë£¨ë² ë¦¬ ë‚˜ë¬´", 70, plantPrefabArray[1], 1, 30f);
+        plantArray[2] = new Plant(4, "ì•¼ììˆ˜", 100, plantPrefabArray[2], 2, 45f);
+        plantArray[3] = new Plant(5, "ë²šë‚˜ë¬´", 150, plantPrefabArray[3], 3, 60f);
+        plantArray[4] = new Plant(6, "ëŒ€ë‚˜ë¬´", 200, plantPrefabArray[4], 4, 90f);
+        plantArray[5] = new Plant(7, "íŠ¤ë¦½ë°­", 70, plantPrefabArray[5], 5, 30f);
+        plantArray[6] = new Plant(8, "ë‹¹ê·¼ë°­", 100, plantPrefabArray[6], 6, 45f);
+        plantArray[7] = new Plant(9, "ìˆ˜ë°•ë°­", 200, plantPrefabArray[7], 7, 90f);
 
-        storeArray[0] = new Store(10, "Ç³Â÷", 300, storePrefabArray[0], 2, 8, 45f);
-        storeArray[1] = new Store(11, "Ä«Æä", 500, storePrefabArray[1], 5, 9, 60f);
-        storeArray[2] = new Store(12, "º£ÀÌÄ¿¸®", 500, storePrefabArray[2], 5, 10, 60f);
-        storeArray[3] = new Store(13, "¾à±¹", 700, storePrefabArray[3], 10, 11, 90f);
-        storeArray[4] = new Store(14, "¾ßÃ¤°¡°Ô", 700, storePrefabArray[4], 10, 12, 90f);
-        storeArray[5] = new Store(15, "·¹½ºÅä¶û", 1000, storePrefabArray[5], 20, 13, 120f);
-        storeArray[6] = new Store(16, "Àå³­°¨°¡°Ô", 1000, storePrefabArray[6], 20, 14, 120f);
-        storeArray[7] = new Store(17, "²É°¡°Ô", 1000, storePrefabArray[7], 20, 15, 120f);
-        storeArray[8] = new Store(18, "¿ÍÀÎ¹Ù", 2000, storePrefabArray[8], 40, 16, 240f);
-        storeArray[9] = new Store(19, "º¸¼®»ó", 2000, storePrefabArray[9], 40, 17, 240f);
+        storeArray[0] = new Store(10, "í’ì°¨", 300, storePrefabArray[0], 2, 8, 45f);
+        storeArray[1] = new Store(11, "ì¹´í˜", 500, storePrefabArray[1], 5, 9, 60f);
+        storeArray[2] = new Store(12, "ë² ì´ì»¤ë¦¬", 500, storePrefabArray[2], 5, 10, 60f);
+        storeArray[3] = new Store(13, "ì•½êµ­", 700, storePrefabArray[3], 10, 11, 90f);
+        storeArray[4] = new Store(14, "ì•¼ì±„ê°€ê²Œ", 700, storePrefabArray[4], 10, 12, 90f);
+        storeArray[5] = new Store(15, "ë ˆìŠ¤í† ë‘", 1000, storePrefabArray[5], 20, 13, 120f);
+        storeArray[6] = new Store(16, "ì¥ë‚œê°ê°€ê²Œ", 1000, storePrefabArray[6], 20, 14, 120f);
+        storeArray[7] = new Store(17, "ê½ƒê°€ê²Œ", 1000, storePrefabArray[7], 20, 15, 120f);
+        storeArray[8] = new Store(18, "ì™€ì¸ë°”", 2000, storePrefabArray[8], 40, 16, 240f);
+        storeArray[9] = new Store(19, "ë³´ì„ìƒ", 2000, storePrefabArray[9], 40, 17, 240f);
 
-        cloud = new Enviroment(-1, "±¸¸§", cloudPrefab);
+        cloud = new Enviroment(-1, "êµ¬ë¦„", cloudPrefab);
     }
 
     private void initStructures()
@@ -149,32 +149,32 @@ public class cshStructure : MonoBehaviour
                 string name = cshBasicInformation.structureName[i].Split(",")[j];
                 switch (name)
                 {
-                    case "±¸¸§": structureArray[i, j] = new StructureInstance(cloud); break;
-                    case "ÁÖ¹Î¾ÆÆÄÆ®": structureArray[i, j] = new StructureInstance(facilityArray[0]); break;
-                    case "Ã¢°í": structureArray[i, j] = new StructureInstance(facilityArray[1]); break;
-                    case "¿À·»Áö ³ª¹«": structureArray[i, j] = new StructureInstance(plantArray[0]); break;
-                    case "ºí·çº£¸® ³ª¹«": structureArray[i, j] = new StructureInstance(plantArray[1]); break;
-                    case "¾ßÀÚ¼ö": structureArray[i, j] = new StructureInstance(plantArray[2]); break;
-                    case "º¢³ª¹«": structureArray[i, j] = new StructureInstance(plantArray[3]); break;
-                    case "´ë³ª¹«": structureArray[i, j] = new StructureInstance(plantArray[4]); break;
-                    case "Æ«¸³¹ç": structureArray[i, j] = new StructureInstance(plantArray[5]); break;
-                    case "´ç±Ù¹ç": structureArray[i, j] = new StructureInstance(plantArray[6]); break;
-                    case "¼ö¹Ú¹ç": structureArray[i, j] = new StructureInstance(plantArray[7]); break;
-                    case "Ç³Â÷": structureArray[i, j] = new StructureInstance(storeArray[0]); break;
-                    case "Ä«Æä": structureArray[i, j] = new StructureInstance(storeArray[1]); break;
-                    case "º£ÀÌÄ¿¸®": structureArray[i, j] = new StructureInstance(storeArray[2]); break;
-                    case "¾à±¹": structureArray[i, j] = new StructureInstance(storeArray[3]); break;
-                    case "¾ßÃ¤°¡°Ô": structureArray[i, j] = new StructureInstance(storeArray[4]); break;
-                    case "·¹½ºÅä¶û": structureArray[i, j] = new StructureInstance(storeArray[5]); break;
-                    case "Àå³­°¨°¡°Ô": structureArray[i, j] = new StructureInstance(storeArray[6]); break;
-                    case "²É°¡°Ô": structureArray[i, j] = new StructureInstance(storeArray[7]); break;
-                    case "¿ÍÀÎ¹Ù": structureArray[i, j] = new StructureInstance(storeArray[8]); break;
-                    case "º¸¼®»ó": structureArray[i, j] = new StructureInstance(storeArray[9]); break;
+                    case "êµ¬ë¦„": structureArray[i, j] = new StructureInstance(cloud); break;
+                    case "ì£¼ë¯¼ì•„íŒŒíŠ¸": structureArray[i, j] = new StructureInstance(facilityArray[0]); break;
+                    case "ì°½ê³ ": structureArray[i, j] = new StructureInstance(facilityArray[1]); break;
+                    case "ì˜¤ë Œì§€ ë‚˜ë¬´": structureArray[i, j] = new StructureInstance(plantArray[0]); break;
+                    case "ë¸”ë£¨ë² ë¦¬ ë‚˜ë¬´": structureArray[i, j] = new StructureInstance(plantArray[1]); break;
+                    case "ì•¼ììˆ˜": structureArray[i, j] = new StructureInstance(plantArray[2]); break;
+                    case "ë²šë‚˜ë¬´": structureArray[i, j] = new StructureInstance(plantArray[3]); break;
+                    case "ëŒ€ë‚˜ë¬´": structureArray[i, j] = new StructureInstance(plantArray[4]); break;
+                    case "íŠ¤ë¦½ë°­": structureArray[i, j] = new StructureInstance(plantArray[5]); break;
+                    case "ë‹¹ê·¼ë°­": structureArray[i, j] = new StructureInstance(plantArray[6]); break;
+                    case "ìˆ˜ë°•ë°­": structureArray[i, j] = new StructureInstance(plantArray[7]); break;
+                    case "í’ì°¨": structureArray[i, j] = new StructureInstance(storeArray[0]); break;
+                    case "ì¹´í˜": structureArray[i, j] = new StructureInstance(storeArray[1]); break;
+                    case "ë² ì´ì»¤ë¦¬": structureArray[i, j] = new StructureInstance(storeArray[2]); break;
+                    case "ì•½êµ­": structureArray[i, j] = new StructureInstance(storeArray[3]); break;
+                    case "ì•¼ì±„ê°€ê²Œ": structureArray[i, j] = new StructureInstance(storeArray[4]); break;
+                    case "ë ˆìŠ¤í† ë‘": structureArray[i, j] = new StructureInstance(storeArray[5]); break;
+                    case "ì¥ë‚œê°ê°€ê²Œ": structureArray[i, j] = new StructureInstance(storeArray[6]); break;
+                    case "ê½ƒê°€ê²Œ": structureArray[i, j] = new StructureInstance(storeArray[7]); break;
+                    case "ì™€ì¸ë°”": structureArray[i, j] = new StructureInstance(storeArray[8]); break;
+                    case "ë³´ì„ìƒ": structureArray[i, j] = new StructureInstance(storeArray[9]); break;
                 }
             }
         }
 
-        // ³²Àº »ı»ê ½Ã°£À» ºÒ·¯¿Í ÀúÀåÇÏ°í °Ç¹°À» »ı¼º
+        // ë‚¨ì€ ìƒì‚° ì‹œê°„ì„ ë¶ˆëŸ¬ì™€ ì €ì¥í•˜ê³  ê±´ë¬¼ì„ ìƒì„±
         for (int i = 0; i < 21; i++)
         {
             for (int j = 0; j < 21; j++)
@@ -209,18 +209,18 @@ public class cshStructure : MonoBehaviour
 
     public GameObject createStructure(StructureInstance structure, int x, int y, bool isSave)
     {
-        // °ÔÀÓÀ» ½ÃÀÛÇÏ°í ÀúÀåµÈ ±¸Á¶¹°À» »ı¼ºÇÏ°Å³ª ±¸Á¶¹°À» »õ·Î »ı¼º
+        // ê²Œì„ì„ ì‹œì‘í•˜ê³  ì €ì¥ëœ êµ¬ì¡°ë¬¼ì„ ìƒì„±í•˜ê±°ë‚˜ êµ¬ì¡°ë¬¼ì„ ìƒˆë¡œ ìƒì„±
         Transform parent = grounds.transform.GetChild(x).transform.GetChild(y).transform.GetChild(1);
         GameObject structureGameObject = Instantiate(structure.structure.prefab);
-        structureGameObject.name = structureGameObject.name.Split("(")[0]; // ¿ÀºêÁ§Æ®¸¦ »ı¼ºÇÏ¸é ÀÌ¸§¿¡ "(clone)"ÀÌ ºÙ¾î¼­ Á¦°Å
+        structureGameObject.name = structureGameObject.name.Split("(")[0]; // ì˜¤ë¸Œì íŠ¸ë¥¼ ìƒì„±í•˜ë©´ ì´ë¦„ì— "(clone)"ì´ ë¶™ì–´ì„œ ì œê±°
         structureGameObject.GetComponent<SpriteRenderer>().sortingOrder = (x + y) * 2;
         structureGameObject.transform.SetParent(parent, false);
         if (isSave)
         {
-            // ÀúÀåµÈ ±¸Á¶¹°ÀÇ °æ¿ì
+            // ì €ì¥ëœ êµ¬ì¡°ë¬¼ì˜ ê²½ìš°
             if (structure.structure.GetType().Name == "Store" || structure.structure.GetType().Name == "Plant")
             {
-                // ±¸Á¶¹°ÀÌ »ı¼ºµÇ¸é »ı»ê ½ÃÀÛ
+                // êµ¬ì¡°ë¬¼ì´ ìƒì„±ë˜ë©´ ìƒì‚° ì‹œì‘
                 structureGameObject.GetComponent<cshStructureProduce>().startProduce(structure);
             }
         }
@@ -230,36 +230,36 @@ public class cshStructure : MonoBehaviour
 
     public GameObject moveStructureOld(GameObject structure, int x, int y, bool isTemporary)
     {
-        // µå·¡±×·Î Ä«¸Ş¶ó°¡ ÀÌµ¿ÇÑ °æ¿ì ±¸Á¶¹°µµ ÀÌµ¿ (Àü¿¡ ÀÖ´ø À§Ä¡¿¡ ±¸Á¶¹° »èÁ¦ -> »õ·Î¿î À§Ä¡¿¡ »ı¼º)
-        // »õ·Î¿î ¶¥ À§Ä¡¿¡ ±¸Á¶¹° »ı¼º
+        // ë“œë˜ê·¸ë¡œ ì¹´ë©”ë¼ê°€ ì´ë™í•œ ê²½ìš° êµ¬ì¡°ë¬¼ë„ ì´ë™ (ì „ì— ìˆë˜ ìœ„ì¹˜ì— êµ¬ì¡°ë¬¼ ì‚­ì œ -> ìƒˆë¡œìš´ ìœ„ì¹˜ì— ìƒì„±)
+        // ìƒˆë¡œìš´ ë•… ìœ„ì¹˜ì— êµ¬ì¡°ë¬¼ ìƒì„±
         Transform parent = grounds.transform.GetChild(x).transform.GetChild(y).transform.GetChild(1);
         GameObject newSelectedStructure = Instantiate(structure);
         newSelectedStructure.name = newSelectedStructure.name.Split("(")[0];
-        // ¾ÆÁ÷ ÀÌµ¿ÁßÀÎ ±¸Á¶¹°ÀÌ ¿ø·¡ÀÇ ±¸Á¶¹°°ú °ãÄ¥ °æ¿ì ÇöÀç ÀÌµ¿ÁßÀÎ ±¸Á¶¹°ÀÌ ´õ ¾ÕÀ¸·Î º¸ÀÌ°Ô ÇÔ
+        // ì•„ì§ ì´ë™ì¤‘ì¸ êµ¬ì¡°ë¬¼ì´ ì›ë˜ì˜ êµ¬ì¡°ë¬¼ê³¼ ê²¹ì¹  ê²½ìš° í˜„ì¬ ì´ë™ì¤‘ì¸ êµ¬ì¡°ë¬¼ì´ ë” ì•ìœ¼ë¡œ ë³´ì´ê²Œ í•¨
         newSelectedStructure.GetComponent<SpriteRenderer>().sortingOrder = (x + y) * 2 + (isTemporary ? 1 : 0); 
         newSelectedStructure.transform.SetParent(parent, false);
 
-        // ÀÌÀüÀÇ À§Ä¡¿¡ ÀÖ´Â ±¸Á¶¹° »èÁ¦
+        // ì´ì „ì˜ ìœ„ì¹˜ì— ìˆëŠ” êµ¬ì¡°ë¬¼ ì‚­ì œ
         Destroy(structure); 
         return newSelectedStructure;
     }
 
     public void moveStructure(GameObject structure, int x, int y, bool isTemporary)
     {
-        // µå·¡±×·Î Ä«¸Ş¶ó°¡ ÀÌµ¿ÇÑ °æ¿ì ±¸Á¶¹°µµ ÀÌµ¿ (GameObjectÀÇ ºÎ¸ğ(¶¥) º¯°æ)
+        // ë“œë˜ê·¸ë¡œ ì¹´ë©”ë¼ê°€ ì´ë™í•œ ê²½ìš° êµ¬ì¡°ë¬¼ë„ ì´ë™ (GameObjectì˜ ë¶€ëª¨(ë•…) ë³€ê²½)
         Transform parent = grounds.transform.GetChild(x).transform.GetChild(y).transform.GetChild(1);
-        // ¾ÆÁ÷ ÀÌµ¿ÁßÀÎ ±¸Á¶¹°ÀÌ ¿ø·¡ÀÇ ±¸Á¶¹°°ú °ãÄ¥ °æ¿ì ÇöÀç ÀÌµ¿ÁßÀÎ ±¸Á¶¹°ÀÌ ´õ ¾ÕÀ¸·Î º¸ÀÌ°Ô ÇÔ
+        // ì•„ì§ ì´ë™ì¤‘ì¸ êµ¬ì¡°ë¬¼ì´ ì›ë˜ì˜ êµ¬ì¡°ë¬¼ê³¼ ê²¹ì¹  ê²½ìš° í˜„ì¬ ì´ë™ì¤‘ì¸ êµ¬ì¡°ë¬¼ì´ ë” ì•ìœ¼ë¡œ ë³´ì´ê²Œ í•¨
         structure.GetComponent<SpriteRenderer>().sortingOrder = (x + y) * 2 + (isTemporary ? 1 : 0);
         structure.transform.SetParent(parent, false);
     }
 
     public void confirmStructurePosition(GameObject structure, int beforeX, int beforeY, int afterX, int afterY, StructureInstance structureInfo)
     {
-        // »õ·Î¿î ±¸Á¶¹°À» °Ç¼³ÇÏ°Å³ª ±¸Á¶¹° ÀÌµ¿ À§Ä¡¸¦ È®Á¤ÇßÀ»¶§
+        // ìƒˆë¡œìš´ êµ¬ì¡°ë¬¼ì„ ê±´ì„¤í•˜ê±°ë‚˜ êµ¬ì¡°ë¬¼ ì´ë™ ìœ„ì¹˜ë¥¼ í™•ì •í–ˆì„ë•Œ
         structure.GetComponent<SpriteRenderer>().sortingOrder = (afterX + afterY) * 2;
         if(structureInfo == null)
         {
-            // À§Ä¡ ÀÌµ¿
+            // ìœ„ì¹˜ ì´ë™
             if(afterX != beforeX || afterY != beforeY)
             {
                 structureArray[afterX, afterY] = structureArray[beforeX, beforeY];
@@ -268,10 +268,10 @@ public class cshStructure : MonoBehaviour
         }
         else
         {
-            // »õ·Î¿î ±¸Á¶¹° °Ç¼³
+            // ìƒˆë¡œìš´ êµ¬ì¡°ë¬¼ ê±´ì„¤
             structureArray[afterX, afterY] = structureInfo;
             cshBasicInformation.acornNum -= structureInfo.structure.price;
-            limitedNumberArray[structureInfo.structure.code]--; // °Ç¼³ °¡´ÉÇÑ °Ç¹° ¼ö °¨¼Ò
+            limitedNumberArray[structureInfo.structure.code]--; // ê±´ì„¤ ê°€ëŠ¥í•œ ê±´ë¬¼ ìˆ˜ ê°ì†Œ
             if (structureInfo.structure.GetType().Name == "Store" || structureInfo.structure.GetType().Name == "Plant")
             {
                 structure.GetComponent<cshStructureProduce>().startProduce(structureInfo);
@@ -295,7 +295,7 @@ public class cshStructure : MonoBehaviour
         int y = ground.GetComponent<cshGroundPosition>().posY;
 
         Destroy(removedStructure);
-        limitedNumberArray[structureArray[x, y].structure.code]++; // °Ç¼³ °¡´ÉÇÑ °Ç¹° ¼ö Áõ°¡
+        limitedNumberArray[structureArray[x, y].structure.code]++; // ê±´ì„¤ ê°€ëŠ¥í•œ ê±´ë¬¼ ìˆ˜ ì¦ê°€
         structureArray[x, y] = null;
     }
 

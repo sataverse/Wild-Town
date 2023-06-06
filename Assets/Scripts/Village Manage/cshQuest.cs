@@ -27,35 +27,35 @@ public class cshQuest : MonoBehaviour
     {
         if (cshBasicInformation.currentQuest == 1)
         {
-            // ¿À·»Áö³ª¹« ÇÏ³ª °Ç¼³
+            // ì˜¤ë Œì§€ë‚˜ë¬´ í•˜ë‚˜ ê±´ì„¤
             currentComplete = 12 - structureInformation.limitedNumberArray[2];
             purposeComplete = 1;
             if (structureInformation.limitedNumberArray[2] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 2)
         {
-            // Ä«Æä ÇÏ³ª °Ç¼³
+            // ì¹´í˜ í•˜ë‚˜ ê±´ì„¤
             currentComplete = 4 - structureInformation.limitedNumberArray[11];
             purposeComplete = 1;
             if (structureInformation.limitedNumberArray[11] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 3)
         {
-            // Ç³Â÷ 2°³ °Ç¼³
+            // í’ì°¨ 2ê°œ ê±´ì„¤
             currentComplete = 8 - structureInformation.limitedNumberArray[10];
             purposeComplete = 2;
             if (structureInformation.limitedNumberArray[10] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 4)
         {
-            // ´ç±Ù ¹ç 3°³ °Ç¼³
+            // ë‹¹ê·¼ ë°­ 3ê°œ ê±´ì„¤
             currentComplete = 12 - structureInformation.limitedNumberArray[8];
             purposeComplete = 3;
             if (structureInformation.limitedNumberArray[8] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 5)
         {
-            // »óÁ¡ 5°¡Áö °Ç¼³
+            // ìƒì  5ê°€ì§€ ê±´ì„¤
             currentComplete = 0;
 
             if (structureInformation.limitedNumberArray[10] < 8 && structureInformation.limitedNumberArray[10] != -1) currentComplete++;
@@ -68,14 +68,14 @@ public class cshQuest : MonoBehaviour
         }
         else if (cshBasicInformation.currentQuest == 6)
         {
-            // ²ÉÁı µÎ°³ °Ç¼³
+            // ê½ƒì§‘ ë‘ê°œ ê±´ì„¤
             currentComplete = 4 - structureInformation.limitedNumberArray[17];
             purposeComplete = 2;
             if (structureInformation.limitedNumberArray[17] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 7)
         {
-            // »óÁ¡ 8°¡Áö °Ç¼³
+            // ìƒì  8ê°€ì§€ ê±´ì„¤
             currentComplete = 0;
 
             if (structureInformation.limitedNumberArray[10] < 8 && structureInformation.limitedNumberArray[10] != -1) currentComplete++;
@@ -88,14 +88,14 @@ public class cshQuest : MonoBehaviour
         }
         else if (cshBasicInformation.currentQuest == 8)
         {
-            // º¢²É ´Ù¼¸±×·ç °Ç¼³
+            // ë²šê½ƒ ë‹¤ì„¯ê·¸ë£¨ ê±´ì„¤
             currentComplete = 12 - structureInformation.limitedNumberArray[5];
             purposeComplete = 5;
             if (structureInformation.limitedNumberArray[5] == -1) currentComplete = 0;
         }
         else if (cshBasicInformation.currentQuest == 9)
         {
-            // ½Ä¹° 8°¡Áö 4°³¾¿ ½É±â
+            // ì‹ë¬¼ 8ê°€ì§€ 4ê°œì”© ì‹¬ê¸°
             currentComplete = 0;
 
             for (int i = 0; i < 8; i++)

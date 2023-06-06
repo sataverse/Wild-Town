@@ -8,7 +8,7 @@ public class cshCharacterWalkVillage : MonoBehaviour
     public int posX;
     public int posY;
     public bool isStart = false;
-    private int status = 1; // 0: ½¬±â  1: Ã£±â  2: ¿òÁ÷ÀÓ
+    private int status = 1; // 0: ì‰¬ê¸°  1: ì°¾ê¸°  2: ì›€ì§ì„
     private int destination = -1;
     private float currentTime = 0f;
     private float moveTime = 0f;
@@ -30,7 +30,7 @@ public class cshCharacterWalkVillage : MonoBehaviour
         {
             if(status == 0)
             {
-                // ÁÖ¹ÎÀÌ °¡¸¸È÷ ÀÖ´Â ½Ã°£
+                // ì£¼ë¯¼ì´ ê°€ë§Œíˆ ìˆëŠ” ì‹œê°„
                 currentTime += Time.deltaTime;
                 if(currentTime > moveTime + idleTime)
                 {
@@ -40,7 +40,7 @@ public class cshCharacterWalkVillage : MonoBehaviour
             }
             else if (status == 1)
             {
-                // ÀÌµ¿ÇÒ °÷À» Å½»ö : °Ç¹°ÀÌ ¾ø´Â À§Ä¡
+                // ì´ë™í•  ê³³ì„ íƒìƒ‰ : ê±´ë¬¼ì´ ì—†ëŠ” ìœ„ì¹˜
                 System.Random r = new System.Random();
                 List<int> routeList = new List<int>();
                 startPos = transform.position;
@@ -151,7 +151,7 @@ public class cshCharacterWalkVillage : MonoBehaviour
             }
             else
             {
-                // ÁÖ¹ÎÀÌ Á¤ÇÑ À§Ä¡·Î nÃÊ µ¿¾È ÀÌµ¿
+                // ì£¼ë¯¼ì´ ì •í•œ ìœ„ì¹˜ë¡œ nì´ˆ ë™ì•ˆ ì´ë™
                 currentTime += Time.deltaTime;
                 if(currentTime > moveTime)
                 {

@@ -22,7 +22,7 @@ public class CshStone : MonoBehaviour
     {
         if (isStart)
         {
-            // µ¹À» ºü¸¥¼Óµµ·Î 8È¸ ¹ß»ç
+            // ëŒì„ ë¹ ë¥¸ì†ë„ë¡œ 8íšŒ ë°œì‚¬
             if (count >= 8)
             {
                 Destroy(transform.gameObject);

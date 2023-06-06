@@ -29,8 +29,8 @@ public class cshHurricane : MonoBehaviour
 
     public void startSpin()
     {
-        // Ä³¸¯ÅÍ¸¦ Åõ¸íÇÏ°Ô ¸¸µé¾î Çã¸®ÄÉÀÎ¸¸ º¸ÀÌ°Ô ÇÔ
-        // ¹üÀ§³»ÀÇ ¸ğµç ÀûÀ» °ø°İÇÏ°í ¹æ¾î·Â Áõ°¡
+        // ìºë¦­í„°ë¥¼ íˆ¬ëª…í•˜ê²Œ ë§Œë“¤ì–´ í—ˆë¦¬ì¼€ì¸ë§Œ ë³´ì´ê²Œ í•¨
+        // ë²”ìœ„ë‚´ì˜ ëª¨ë“  ì ì„ ê³µê²©í•˜ê³  ë°©ì–´ë ¥ ì¦ê°€
         isStart = true;
         transform.parent.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 0);
         transform.parent.GetComponent<cshCharacterAttack>().isMultiAttack = true;

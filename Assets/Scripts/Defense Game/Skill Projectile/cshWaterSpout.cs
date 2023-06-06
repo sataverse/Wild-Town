@@ -22,7 +22,7 @@ public class cshWaterSpout : MonoBehaviour
         {
             if (currentTime == 0f)
             {
-                // ¹üÀ§ ³»ÀÇ ¸ğµç Àû¿¡°Ô ÇÇÇØ¸¦ ÀÔÈ÷¸ç ±âÀı »óÅÂÀÌ»óÀ» ºÎ¿©
+                // ë²”ìœ„ ë‚´ì˜ ëª¨ë“  ì ì—ê²Œ í”¼í•´ë¥¼ ì…íˆë©° ê¸°ì ˆ ìƒíƒœì´ìƒì„ ë¶€ì—¬
                 Collider2D[] colls = Physics2D.OverlapBoxAll(transform.position, new Vector2(3.2f, 5.0f), 0);
                 for (int i = 0; i < colls.Length; i++)
                 {

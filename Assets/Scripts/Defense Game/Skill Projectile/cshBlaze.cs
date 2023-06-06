@@ -19,7 +19,7 @@ public class cshBlaze : MonoBehaviour
     {
         if (startAttack)
         {
-            // ºÒ²ÉÀº ÀûÁø ³¡±îÁö ÀÌµ¿ÇÏ¸ç ¸ğµç Àû¿¡°Ô ÇÇÇØ¸¦ ÀÔÈû
+            // ë¶ˆê½ƒì€ ì ì§„ ëê¹Œì§€ ì´ë™í•˜ë©° ëª¨ë“  ì ì—ê²Œ í”¼í•´ë¥¼ ì…í˜
             transform.Translate(new Vector3(speed * Time.deltaTime, 0.0f, 0.0f));
             if (transform.position.x <= -10)
             {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ¹°°Ç »ı»êÀÌ ¿Ï·áµÇ¾úÀ»¶§ º¸¿©ÁÜ
+// ë¬¼ê±´ ìƒì‚°ì´ ì™„ë£Œë˜ì—ˆì„ë•Œ ë³´ì—¬ì¤Œ
 public class cshProduceComplete : MonoBehaviour
 {
     private float speed = 0.3f;
