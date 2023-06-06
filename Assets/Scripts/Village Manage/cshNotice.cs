@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// ÀûÀıÇÏÁö ¾ÊÀº ¹öÆ°À» ÅÍÄ¡ÇÒ °æ¿ì °£´ÜÇÑ ¾Ë¸²À» º¸¿©ÁÜ
+// ì ì ˆí•˜ì§€ ì•Šì€ ë²„íŠ¼ì„ í„°ì¹˜í•  ê²½ìš° ê°„ë‹¨í•œ ì•Œë¦¼ì„ ë³´ì—¬ì¤Œ
 public class cshNotice : MonoBehaviour
 {
     private bool isStart = false;

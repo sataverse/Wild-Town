@@ -46,7 +46,7 @@ public class cshCharacterAttack : MonoBehaviour
     {
         if (!isStart) return;
 
-        // Ä³¸¯ÅÍ¿¡ ÀÇÇØ ¼ÒÈ¯µÈ ¾Æ±º ¿ÀºêÁ§Æ®(¹Ì´Ï °Å¹Ì)´Â ÀÏÁ¤ ½Ã°£ÀÌ Áö³ª¸é »ç¶óÁü
+        // ìºë¦­í„°ì— ì˜í•´ ì†Œí™˜ëœ ì•„êµ° ì˜¤ë¸Œì íŠ¸(ë¯¸ë‹ˆ ê±°ë¯¸)ëŠ” ì¼ì • ì‹œê°„ì´ ì§€ë‚˜ë©´ ì‚¬ë¼ì§
         if (isSpawnCreature)
         {
             spawnTime += Time.deltaTime;
@@ -63,7 +63,7 @@ public class cshCharacterAttack : MonoBehaviour
         }
 
         int count = 0;
-        // Ä³¸¯ÅÍ °ø°İ ¹üÀ§ ³»ÀÇ ¸ğµç ¿ÀºêÁ§Æ® ÀúÀå
+        // ìºë¦­í„° ê³µê²© ë²”ìœ„ ë‚´ì˜ ëª¨ë“  ì˜¤ë¸Œì íŠ¸ ì €ì¥
         Collider2D[] colls = Physics2D.OverlapAreaAll(new Vector2(transform.position.x, transform.position.y - 1), new Vector2(transform.position.x - attackArea, transform.position.y - 1 + attackArea));
         isAttack = false;
         for(int i = 0; i < colls.Length; i++)
@@ -90,16 +90,16 @@ public class cshCharacterAttack : MonoBehaviour
 
         if (isAttack)
         {
-            // °ø°İ ¹üÀ§ ³»ÀÇ ÀûÀÇ ¼ö°¡ 1 ÀÌ»óÀÌ¸é ÀÏ¹İ °ø°İ ¹× ½ºÅ³ »ç¿ë
+            // ê³µê²© ë²”ìœ„ ë‚´ì˜ ì ì˜ ìˆ˜ê°€ 1 ì´ìƒì´ë©´ ì¼ë°˜ ê³µê²© ë° ìŠ¤í‚¬ ì‚¬ìš©
             normalAttackCurrentTime += Time.deltaTime;
             if (normalAttackCurrentCoolTime <= normalAttackCurrentTime)
             {
-                // °ø°İ ¹üÀ§°¡ ÂªÀ¸¸é ±Ù°Å¸® °ø°İ ±æ´Ù¸é ¹ß»çÃ¼ ¹ß»ç
+                // ê³µê²© ë²”ìœ„ê°€ ì§§ìœ¼ë©´ ê·¼ê±°ë¦¬ ê³µê²© ê¸¸ë‹¤ë©´ ë°œì‚¬ì²´ ë°œì‚¬
                 if(attackArea < 1.5f)
                 {
                     if (isMultiAttack)
                     {
-                        // ´ÙÁß °ø°İÀÌ °¡´ÉÇÑ »óÅÂ¸é ¹üÀ§ ³»ÀÇ ¸ğµçÀû °ø°İ
+                        // ë‹¤ì¤‘ ê³µê²©ì´ ê°€ëŠ¥í•œ ìƒíƒœë©´ ë²”ìœ„ ë‚´ì˜ ëª¨ë“ ì  ê³µê²©
                         for(int i = 0; i < enemy.Length; i++)
                         {
                             punch(normalAttack, i);
@@ -116,7 +116,7 @@ public class cshCharacterAttack : MonoBehaviour
                 }
                 normalAttackCurrentTime = 0;
             }
-            // ½ºÅ³ ÄğÅ¸ÀÓÀÌ Áö³ª¸é ½ºÅ³ »ç¿ë
+            // ìŠ¤í‚¬ ì¿¨íƒ€ì„ì´ ì§€ë‚˜ë©´ ìŠ¤í‚¬ ì‚¬ìš©
             if(specialAttackCoolTime <= specialAttackCurrentTime)
             {
                 specialAttackCurrentTime = 0;
@@ -125,7 +125,7 @@ public class cshCharacterAttack : MonoBehaviour
         }
         else 
         {
-            // °ø°İ ¹üÀ§ ¾È¿¡ ÀûÀÌ ¾ø´Ù¸é ÀÌµ¿
+            // ê³µê²© ë²”ìœ„ ì•ˆì— ì ì´ ì—†ë‹¤ë©´ ì´ë™
             transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0.0f, 0.0f));
             normalAttackCurrentTime = 0;
         }
@@ -145,7 +145,7 @@ public class cshCharacterAttack : MonoBehaviour
         isStart = true;
     }
 
-    // ¿ø°Å¸® °ø°İ
+    // ì›ê±°ë¦¬ ê³µê²©
     public void shoot(GameObject projectile)
     {
         GameObject normalProjectilePrefab = Instantiate(projectile);
@@ -153,13 +153,13 @@ public class cshCharacterAttack : MonoBehaviour
         normalProjectilePrefab.transform.position = transform.GetChild(1).position;
     }
 
-    // ±Ù°Å¸® °ø°İ
+    // ê·¼ê±°ë¦¬ ê³µê²©
     public void punch(GameObject attackEffect, int n)
     {
         GameObject attackEffectPrefab = Instantiate(attackEffect);
         if (n == 0)
         {
-            // ±Ù°Å¸® °ø°İ ÀÌÆåÆ®
+            // ê·¼ê±°ë¦¬ ê³µê²© ì´í™íŠ¸
             System.Random r = new System.Random();
             float randX = r.Next(-50, 50) / 100f;
             float randY = r.Next(-50, 50) / 100f;
@@ -186,7 +186,7 @@ public class cshCharacterAttack : MonoBehaviour
         }
         else if(characterCode == 2)
         {
-            // °¡Àå Ã¼·Â ºñÀ²ÀÌ ÀûÀº ¾Æ±º Ä¡À¯
+            // ê°€ì¥ ì²´ë ¥ ë¹„ìœ¨ì´ ì ì€ ì•„êµ° ì¹˜ìœ 
             GameObject charList = battleManager.GetComponent<cshBattle>().characterList;
             float min = charList.transform.GetChild(0).GetComponent<cshCharacterAttack>().currentHealthPoint / charList.transform.GetChild(0).GetComponent<cshCharacterAttack>().maxHealthPoint;
             int idx = 0;
@@ -237,7 +237,7 @@ public class cshCharacterAttack : MonoBehaviour
 
             for (int i = 0; i < charList.transform.childCount; i++)
             {
-                // º¸È£¸·À» ÀÌ¹Ì °¡Áö°í ÀÖÁö ¾ÊÀº ¸Ç ¾ÕÀÇ ¾Æ±º¿¡°Ô º¸È£¸· ºÎ¿©
+                // ë³´í˜¸ë§‰ì„ ì´ë¯¸ ê°€ì§€ê³  ìˆì§€ ì•Šì€ ë§¨ ì•ì˜ ì•„êµ°ì—ê²Œ ë³´í˜¸ë§‰ ë¶€ì—¬
                 if(charList.transform.GetChild(i).childCount > 3)
                 {
                     bool flag = false;

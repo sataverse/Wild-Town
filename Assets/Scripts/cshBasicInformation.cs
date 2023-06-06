@@ -228,12 +228,12 @@ public class cshBasicInformation : MonoBehaviour
                 }
                 else if (i >= 8 && i<=12 && j >= 8 && j <= 12)
                 {
-                    if (i == 10 && j == 9) str += "ÁÖ¹Î¾ÆÆÄÆ®,";
+                    if (i == 10 && j == 9) str += "ì£¼ë¯¼ì•„íŒŒíŠ¸,";
                     else str += "null,";
                 }
                 else
                 {
-                    str += "±¸¸§,";
+                    str += "êµ¬ë¦„,";
                 }
             }
             info.structureName[i] = str;

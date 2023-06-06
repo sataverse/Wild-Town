@@ -23,7 +23,7 @@ public class cshStructureProduce : MonoBehaviour
     {
         if (isStart)
         {
-            // »óÁ¡Àº ÀÏÁ¤ ½Ã°£¸¶´Ù µµÅä¸® »ý»ê
+            // ìƒì ì€ ì¼ì • ì‹œê°„ë§ˆë‹¤ ë„í† ë¦¬ ìƒì‚°
             if (structureInstance.structure.GetType().Name == "Store")
             {
                 structureInstance.currentAcornTime += Time.deltaTime;
@@ -35,7 +35,7 @@ public class cshStructureProduce : MonoBehaviour
             }
             structureInstance.currentProductTime += Time.deltaTime;
 
-            // »ý»ê ¿Ï·áµÈ ¹°°ÇÀ» º¸¿©ÁÜ
+            // ìƒì‚° ì™„ë£Œëœ ë¬¼ê±´ì„ ë³´ì—¬ì¤Œ
             if (structureInstance.currentProductTime >= structureInstance.structure.productTime)
             {
                 GameObject product = Instantiate(productInfo.productArray[structureInstance.structure.product].smallPrefab);

@@ -19,7 +19,7 @@ public class cshPlasma : MonoBehaviour
     {
         if (startAttack)
         {
-            // ÇÃ¶óÁî¸¶´Â ÀûÁø ³¡±îÁö ÀÌµ¿ÇÏ¸ç ¸ğµç Àû¿¡°Ô ÇÇÇØ¸¦ ÀÔÈû
+            // í”Œë¼ì¦ˆë§ˆëŠ” ì ì§„ ëê¹Œì§€ ì´ë™í•˜ë©° ëª¨ë“  ì ì—ê²Œ í”¼í•´ë¥¼ ì…í˜
             transform.Translate(new Vector3(speed * Time.deltaTime, 0.0f, 0.0f));
             if(transform.position.x <= -10)
             {
@@ -32,7 +32,7 @@ public class cshPlasma : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            // Ãæµ¹Ã¼°¡ µé¾î¿À´Â ¼ø°£ ÀûÀÏ °æ¿ì µ¥¹ÌÁö¸¦ ÁÖ°í ¹æ¾î·Â °¨¼Ò µğ¹öÇÁ¸¦ ºÎ¿©
+            // ì¶©ëŒì²´ê°€ ë“¤ì–´ì˜¤ëŠ” ìˆœê°„ ì ì¼ ê²½ìš° ë°ë¯¸ì§€ë¥¼ ì£¼ê³  ë°©ì–´ë ¥ ê°ì†Œ ë””ë²„í”„ë¥¼ ë¶€ì—¬
             int defense = collision.transform.parent.GetComponent<cshEnemyAttack>().currentDefensePower;
             int currentDamage = damage - (damage * defense / 100);
             if (currentDamage <= 0) currentDamage = 1;

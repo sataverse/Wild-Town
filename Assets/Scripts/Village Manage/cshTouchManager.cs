@@ -30,7 +30,7 @@ public class cshTouchManager : MonoBehaviour
         {
             if (uiManager.GetComponent<cshUIControl>().status == "village" || uiManager.GetComponent<cshUIControl>().status == "build" || uiManager.GetComponent<cshUIControl>().status == "build-move")
             {
-                // ui ÅÍÄ¡´Â ¹«½Ã
+                // ui í„°ì¹˜ëŠ” ë¬´ì‹œ
                 if (!IsPointerOverUIObject(Input.mousePosition))
                 {
                     touchControl();
@@ -43,12 +43,12 @@ public class cshTouchManager : MonoBehaviour
             float nowDistance = 0f;
             if (Input.touches[0].phase == TouchPhase.Began || Input.touches[1].phase == TouchPhase.Began)
             {
-                // ÅÍÄ¡°¡ ½ÃÀÛµÇ¸é µÎ ÅÍÄ¡ÀÇ °£°İÀ» ÀúÀå
+                // í„°ì¹˜ê°€ ì‹œì‘ë˜ë©´ ë‘ í„°ì¹˜ì˜ ê°„ê²©ì„ ì €ì¥
                 preDistance = (Input.touches[0].position - Input.touches[1].position).sqrMagnitude;
             }
             else if (Input.touches[0].phase == TouchPhase.Moved || Input.touches[1].phase == TouchPhase.Moved)
             {
-                // ÅÍÄ¡µÈ Ã¤·Î ¿òÁ÷ÀÌ¸é µÎ ÅÍÄ¡ÀÇ °£°İÀ» ÀúÀåÇÏ°í ½ÃÀÛ °£°İ°ú ºñ±³ÇÏ¿© Ä«¸Ş¶ó ÁÜÀÎ/ÁÜ¾Æ¿ô
+                // í„°ì¹˜ëœ ì±„ë¡œ ì›€ì§ì´ë©´ ë‘ í„°ì¹˜ì˜ ê°„ê²©ì„ ì €ì¥í•˜ê³  ì‹œì‘ ê°„ê²©ê³¼ ë¹„êµí•˜ì—¬ ì¹´ë©”ë¼ ì¤Œì¸/ì¤Œì•„ì›ƒ
                 nowDistance = (Input.touches[0].position - Input.touches[1].position).sqrMagnitude;
                 if (preDistance > nowDistance)
                 {
@@ -58,7 +58,7 @@ public class cshTouchManager : MonoBehaviour
                 {
                     sizeOrtho -= 0.1f;
                 }
-                sizeOrtho = Mathf.Clamp(sizeOrtho, 3.0f, 8.0f); // ÁÜÀÎ/ÁÜ¾Æ¿ô ¹üÀ§ Á¦ÇÑ
+                sizeOrtho = Mathf.Clamp(sizeOrtho, 3.0f, 8.0f); // ì¤Œì¸/ì¤Œì•„ì›ƒ ë²”ìœ„ ì œí•œ
                 Camera.main.GetComponent<Camera>().orthographicSize = sizeOrtho;
             }
         }
@@ -76,21 +76,21 @@ public class cshTouchManager : MonoBehaviour
 
     public void touchControl()
     {
-        // ÅÍÄ¡ ½ÃÀÛ
+        // í„°ì¹˜ ì‹œì‘
         if (Input.GetMouseButtonDown(0))
         {
             clickPointA = Input.mousePosition;
             clickPointB = Input.mousePosition;
         }
 
-        // ÅÍÄ¡Áß
+        // í„°ì¹˜ì¤‘
         if (Input.GetMouseButton(0))
         {
             clickPointC = Input.mousePosition;
-            // ÃÖ±Ù ÅÍÄ¡ ÁÂÇ¥¿Í ÇöÀç ÅÍÄ¡ ÁÂÇ¥°¡ ´Ù¸£¸é
+            // ìµœê·¼ í„°ì¹˜ ì¢Œí‘œì™€ í˜„ì¬ í„°ì¹˜ ì¢Œí‘œê°€ ë‹¤ë¥´ë©´
             if (clickPointC.x != clickPointB.x || clickPointC.y != clickPointB.y)
             {
-                // Ä«¸Ş¶ó ÀÌµ¿
+                // ì¹´ë©”ë¼ ì´ë™
                 prePos = (new Vector2(clickPointC.x, clickPointC.y) - clickPointB) * (-0.2f) * Time.deltaTime;
                 Camera.main.transform.Translate(prePos);
 
@@ -101,12 +101,12 @@ public class cshTouchManager : MonoBehaviour
 
                 if (uiManager.GetComponent<cshUIControl>().status == "build")
                 {
-                    // ¼±ÅÃµÈ °Ç¹°À» ¼±ÅÃ ÇØÁ¦
+                    // ì„ íƒëœ ê±´ë¬¼ì„ ì„ íƒ í•´ì œ
                     uiManager.GetComponent<cshUIControl>().deselectStructureToModify();
                 }
                 else if (uiManager.GetComponent<cshUIControl>().status == "build-move")
                 {
-                    // °Ç¹°À» ¿Å±â°í ÀÖÀ» °æ¿ì Ä«¸Ş¶óÀÇ À§Ä¡°¡ ´Ù¸¥ ¶¥À¸·Î ÀÌµ¿Çß´ÂÁö °Ë»ç
+                    // ê±´ë¬¼ì„ ì˜®ê¸°ê³  ìˆì„ ê²½ìš° ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ê°€ ë‹¤ë¥¸ ë•…ìœ¼ë¡œ ì´ë™í–ˆëŠ”ì§€ ê²€ì‚¬
                     RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
                     if (hit.collider != null)
                     {
@@ -120,10 +120,10 @@ public class cshTouchManager : MonoBehaviour
             clickPointB = clickPointC;
         }
 
-        // ÅÍÄ¡ ¶¼¾î³¿
+        // í„°ì¹˜ ë–¼ì–´ëƒ„
         if (Input.GetMouseButtonUp(0))
         {
-            // ¶¼¾î³ÂÀ»¶§ ÁÂÇ¥¿Í ½ÃÀÛ ÁÂÇ¥°¡ °°À¸¸é ±¸Á¶¹° Picking ½ÇÇà
+            // ë–¼ì–´ëƒˆì„ë•Œ ì¢Œí‘œì™€ ì‹œì‘ ì¢Œí‘œê°€ ê°™ìœ¼ë©´ êµ¬ì¡°ë¬¼ Picking ì‹¤í–‰
             if (clickPointA.x == clickPointB.x && clickPointA.y == clickPointB.y)
             {
                 Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -140,17 +140,17 @@ public class cshTouchManager : MonoBehaviour
                             string name = par.GetChild(1).GetChild(0).name;
                             if (name == "Storage")
                             {
-                                // Ã¢°í ¹öÆ°À» ´©¸¥°Í°ú °°À½
+                                // ì°½ê³  ë²„íŠ¼ì„ ëˆ„ë¥¸ê²ƒê³¼ ê°™ìŒ
                                 uiManager.GetComponent<cshUIControl>().openStorage();
                             }
                             else if (name == "Apartment")
                             {
-                                // ÁÖ¹Î ¹öÆ°À» ´©¸¥°Í°ú °°À½
+                                // ì£¼ë¯¼ ë²„íŠ¼ì„ ëˆ„ë¥¸ê²ƒê³¼ ê°™ìŒ
                                 uiManager.GetComponent<cshUIControl>().openResident();
                             }
                             else if (name != "Cloud")
                             {
-                                // ±¸Á¶¹° »ı»ê ½Ã°£ È®ÀÎ
+                                // êµ¬ì¡°ë¬¼ ìƒì‚° ì‹œê°„ í™•ì¸
                                 uiManager.GetComponent<cshUIControl>().openStructure(posX, posY);
                             }
                         }
@@ -163,19 +163,19 @@ public class cshTouchManager : MonoBehaviour
                         {
                             if (par.GetChild(1).transform.GetChild(0).name == "Cloud")
                             {
-                                // ±¸¸§À» ÅÍÄ¡ÇÏ¸é ¿ø·¡ ¼±ÅÃ µÇ¾ú´ø ±¸Á¶¹°ÀÌ ¼±ÅÃ ÇØÁ¦µÊ
+                                // êµ¬ë¦„ì„ í„°ì¹˜í•˜ë©´ ì›ë˜ ì„ íƒ ë˜ì—ˆë˜ êµ¬ì¡°ë¬¼ì´ ì„ íƒ í•´ì œë¨
                                 uiManager.GetComponent<cshUIControl>().deselectStructureToModify();
                             }
                             else
                             {
-                                // ±¸Á¶¹°À» ÅÍÄ¡ÇÏ¸é ±¸Á¶¹°ÀÌ ¼±ÅÃµÇ¾î ÀÌµ¿ ¹öÆ°, Ã¶°Å ¹öÆ° º¸¿©Áü
+                                // êµ¬ì¡°ë¬¼ì„ í„°ì¹˜í•˜ë©´ êµ¬ì¡°ë¬¼ì´ ì„ íƒë˜ì–´ ì´ë™ ë²„íŠ¼, ì² ê±° ë²„íŠ¼ ë³´ì—¬ì§
                                 Camera.main.transform.position = new Vector3(posX, posY, -10);
                                 uiManager.GetComponent<cshUIControl>().selectStructureToModify(par);
                             }
                         }
                         else
                         {
-                            // ¾Æ¹«°Íµµ Áö¾îÁöÁö ¾ÊÀº ¶¥À» ÅÍÄ¡ÇÏ¸é ¿ø·¡ ¼±ÅÃ µÇ¾ú´ø ±¸Á¶¹°ÀÌ ¼±ÅÃ ÇØÁ¦µÊ
+                            // ì•„ë¬´ê²ƒë„ ì§€ì–´ì§€ì§€ ì•Šì€ ë•…ì„ í„°ì¹˜í•˜ë©´ ì›ë˜ ì„ íƒ ë˜ì—ˆë˜ êµ¬ì¡°ë¬¼ì´ ì„ íƒ í•´ì œë¨
                             uiManager.GetComponent<cshUIControl>().deselectStructureToModify();
                         }
                     }

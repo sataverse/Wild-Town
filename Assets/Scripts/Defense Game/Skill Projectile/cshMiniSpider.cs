@@ -37,7 +37,7 @@ public class cshMiniSpider : MonoBehaviour
 
     public void spawn(GameObject spider, int n)
     {
-        //Å©±â°¡ ´Ù¸¥ °Å¹Ì 3¸¶¸® ¼ÒÈ¯
+        //í¬ê¸°ê°€ ë‹¤ë¥¸ ê±°ë¯¸ 3ë§ˆë¦¬ ì†Œí™˜
         GameObject miniSpiderPrefab = Instantiate(spider);
         
         if(n == 0)

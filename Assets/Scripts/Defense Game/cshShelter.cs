@@ -28,14 +28,14 @@ public class cshShelter : MonoBehaviour
         {
             if (currentDurability <= 0)
             {
-                // ¾Æ±º ±âÁöÀÇ ³»±¸µµ°¡ 0ÀÌµÇ¸é ÆĞ¹è Ã³¸®
+                // ì•„êµ° ê¸°ì§€ì˜ ë‚´êµ¬ë„ê°€ 0ì´ë˜ë©´ íŒ¨ë°° ì²˜ë¦¬
                 battleManager.GetComponent<cshBattle>().endDuel(2);
                 Destroy(transform.gameObject);
             }
         }
         else
         {
-            // Àû±º ±âÁöÀÇ ³»±¸µµ¿¡ µû¶ó ¼ÒÈ¯ ¼Óµµ°¡ ´Ù¸£¸ç 0ÀÌµÇ¸é º¸½º¸¦ ¼ÒÈ¯ÇÏ°í ±âÁö´Â ÆÄ±«µÊ
+            // ì êµ° ê¸°ì§€ì˜ ë‚´êµ¬ë„ì— ë”°ë¼ ì†Œí™˜ ì†ë„ê°€ ë‹¤ë¥´ë©° 0ì´ë˜ë©´ ë³´ìŠ¤ë¥¼ ì†Œí™˜í•˜ê³  ê¸°ì§€ëŠ” íŒŒê´´ë¨
             if(currentDurability/maxDurability <= 0.0f)
             {
                 spawnEnemy(2);

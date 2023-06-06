@@ -21,7 +21,7 @@ public class cshInk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ¸ñÇ¥¹° ±îÁö °Å¸®ÀÇ Àı¹İº¸´Ù ÇöÀç ÀÌµ¿ °Å¸®°¡ ÀÛ´Ù¸é ¿ŞÂÊ À§·Î ÀÌµ¿ Å©´Ù¸é ¿ŞÂÊ ¾Æ·¡·Î ÀÌµ¿
+        // ëª©í‘œë¬¼ ê¹Œì§€ ê±°ë¦¬ì˜ ì ˆë°˜ë³´ë‹¤ í˜„ì¬ ì´ë™ ê±°ë¦¬ê°€ ì‘ë‹¤ë©´ ì™¼ìª½ ìœ„ë¡œ ì´ë™ í¬ë‹¤ë©´ ì™¼ìª½ ì•„ë˜ë¡œ ì´ë™
         if(middlePoint > transform.position.x && startShoot && !isPop)
         {
             transform.Translate(new Vector3(speed * Time.deltaTime, speed * Time.deltaTime, 0.0f));
@@ -31,7 +31,7 @@ public class cshInk : MonoBehaviour
             transform.Translate(new Vector3(speed * Time.deltaTime, -speed * Time.deltaTime, 0.0f));
         }
 
-        // ¸Ô¹°ÀÌ ¶³¾îÁö´Ù°¡ ¹Ù´Ú À§Ä¡¿¡ µµ´ŞÇß´Ù¸é ÅÍ¶ß¸®±â
+        // ë¨¹ë¬¼ì´ ë–¨ì–´ì§€ë‹¤ê°€ ë°”ë‹¥ ìœ„ì¹˜ì— ë„ë‹¬í–ˆë‹¤ë©´ í„°ëœ¨ë¦¬ê¸°
         if(transform.position.y <= -0.9f && !isPop)
         {
             isPop = true;
@@ -41,9 +41,9 @@ public class cshInk : MonoBehaviour
         {
             if(currentTime == 0f)
             {
-                transform.GetChild(0).gameObject.SetActive(false); // ¸Ô¹° ÅÍÁö±â Àü ¿ÀºêÁ§Æ®
-                transform.GetChild(1).gameObject.SetActive(true); // ÅÍÁø ¸Ô¹° ¿ÀºêÁ§Æ®
-                // ¸Ô¹°ÀÌ ÅÍÁø À§Ä¡¿¡¼­ ¹üÀ§¾ÈÀÇ Àûµé¿¡°Ô µ¥¹ÌÁö¸¦ ÀÔÈ÷¸ç ½Ç¸í »óÅÂ¸¦ ºÎ¿© (±âº» °ø°İÀÇ ÇÇÇØ·®À» 1·Î º¯°æ)
+                transform.GetChild(0).gameObject.SetActive(false); // ë¨¹ë¬¼ í„°ì§€ê¸° ì „ ì˜¤ë¸Œì íŠ¸
+                transform.GetChild(1).gameObject.SetActive(true); // í„°ì§„ ë¨¹ë¬¼ ì˜¤ë¸Œì íŠ¸
+                // ë¨¹ë¬¼ì´ í„°ì§„ ìœ„ì¹˜ì—ì„œ ë²”ìœ„ì•ˆì˜ ì ë“¤ì—ê²Œ ë°ë¯¸ì§€ë¥¼ ì…íˆë©° ì‹¤ëª… ìƒíƒœë¥¼ ë¶€ì—¬ (ê¸°ë³¸ ê³µê²©ì˜ í”¼í•´ëŸ‰ì„ 1ë¡œ ë³€ê²½)
                 Collider2D[] colls = Physics2D.OverlapBoxAll(transform.position, new Vector2(3.0f, 3.0f), 0);
                 for (int i = 0; i < colls.Length; i++)
                 {
@@ -71,7 +71,7 @@ public class cshInk : MonoBehaviour
 
     public void setFallPosition(float octopusX, float enemyX, int damage)
     {
-        // ¹®¾î¿Í ¸ñÇ¥¹°ÀÇ Áß°£ XÁÂÇ¥
+        // ë¬¸ì–´ì™€ ëª©í‘œë¬¼ì˜ ì¤‘ê°„ Xì¢Œí‘œ
         middlePoint = (octopusX + enemyX) / 2;
         this.damage = damage;
         startShoot = true;

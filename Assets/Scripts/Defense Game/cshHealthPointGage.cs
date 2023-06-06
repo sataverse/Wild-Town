@@ -35,13 +35,13 @@ public class cshHealthPointGage : MonoBehaviour
             max = (float)(character.GetComponent<cshShelter>().maxDurability);
         }
 
-        // »ç°¢ÇüÀÇ Å©±â¸¦ º¯°æÇÏ°í ÀÌµ¿ÇÏ¿© Ã¼·Â¹Ù¸¦ ³ªÅ¸³¿
-        // mutiple : Å¸¿ö³ª º¸½º°°ÀÌ Å« ¿ÀºêÁ§Æ®´Â Ã¼·Â¹Ùµµ Å©°Ô ³ªÅ¸³»·Á¸é Å« ÀÌµ¿ÀÌ ÇÊ¿ä
+        // ì‚¬ê°í˜•ì˜ í¬ê¸°ë¥¼ ë³€ê²½í•˜ê³  ì´ë™í•˜ì—¬ ì²´ë ¥ë°”ë¥¼ ë‚˜íƒ€ëƒ„
+        // mutiple : íƒ€ì›Œë‚˜ ë³´ìŠ¤ê°™ì´ í° ì˜¤ë¸Œì íŠ¸ëŠ” ì²´ë ¥ë°”ë„ í¬ê²Œ ë‚˜íƒ€ë‚´ë ¤ë©´ í° ì´ë™ì´ í•„ìš”
         float healthPointGage = current / max;
         transform.localScale = new Vector2(healthPointGage, 1f);
         transform.localPosition = new Vector2(-multiple * ((1 - healthPointGage) / 2f), 0f);
 
-        // HP ºñÀ²¿¡ µû¶ó Ã¼·Â¹ÙÀÇ »öÀÌ ´Ù¸§
+        // HP ë¹„ìœ¨ì— ë”°ë¼ ì²´ë ¥ë°”ì˜ ìƒ‰ì´ ë‹¤ë¦„
         if(healthPointGage > 0.6f)
         {
             transform.GetComponent<SpriteRenderer>().color = new Color32(0, 255, 0, 200);
